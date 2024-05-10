@@ -1,0 +1,25 @@
+name: Sync
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  sync:
+    if: ${{ github.event.repository.fork }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Sync upstream
+        id: sync
+        uses: aormsby/Fork-Sync-With-Upstream-action@v3.4
+        with:
+          upstream_sync_repo: oraxen/oraxen
+          upstream_sync_branch: master
+          target_sync_branch: master
+          target_repo_token: ${{ secrets.GITHUB_TOKEN }}
