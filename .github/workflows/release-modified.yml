@@ -17,7 +17,7 @@ jobs:
       - name: Setup Java JDK
         uses: actions/setup-java@v3
         with:
-          java-version: 17
+          java-version: 21
           distribution: 'zulu'
           cache: 'gradle'
         
@@ -26,7 +26,6 @@ jobs:
       
       - name: Build with Gradle
         run: ./gradlew build
-        continue-on-error: true
 
       - name: Set outputs
         id: short_sha
