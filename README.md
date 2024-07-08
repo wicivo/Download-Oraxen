@@ -26,7 +26,7 @@
     </a>
 </p>
 
-## What is it?
+## What is it? 
 
 Oraxen is a minecraft plugin that allows you to modify the game by adding new items, weapons, blocks, and more. One of
 its key features is to be able to generate the texture pack automatically from the configuration, which greatly
